@@ -14,9 +14,7 @@ draw_borders no
 stippled_borders 0
 border_inner_margin 5
 border_width 1
-#default_color 7f75eb
 default_color e2e9f1
-#default_color dea970
 alignment top_left
 gap_x 610
 gap_y 8
