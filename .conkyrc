@@ -1,0 +1,31 @@
+use_xft yes
+xftfont cure:size=8
+update_interval 1
+own_window_colour black
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_transparent yes
+own_window_type desktop
+own_window yes
+double_buffer yes
+maximum_width 1680
+draw_shades no
+draw_outline no
+draw_borders no
+stippled_borders 0
+border_inner_margin 5
+border_width 1
+#default_color 7f75eb
+default_color e2e9f1
+#default_color dea970
+alignment top_left
+gap_x 610
+gap_y 8
+no_buffers yes
+uppercase no
+override_utf8_locale yes
+use_spacer none
+
+TEXT
+${alignc}${time %A} ${color e5e4f2}${time %B}${color} ${time %d}${color e5e4f2}  //  ${color}CPU0:${color e5e4f2} ${cpu cpu0}% ${color}CPU1:${color e5e4f2} ${cpu cpu1}%  //  ${color}RAM:${color e5e4f2} ${mem}${color e5e4f2}  //  ${color}Root: ${color e5e4f2}${fs_free_perc /}% ${color}Home: ${color e5e4f2}${fs_free_perc /home}% ${color}External: ${color e5e4f2}${fs_free_perc /media/tmp}%${color e5e4f2}  //  ${color}Email:${color e5e4f2} ${execi 300 ~/.scripts/conky/mails.py}  //  ${color}Arch:${color e5e4f2} ${texeci 300 perl ~/.scripts/conky/updates.pl}${color}
+${alignc}${color}MPD: ${color e5e4f2}${if_mpd_playing}${mpd_artist} ${color}- ${color e5e4f2}${mpd_title}${endif}
+${alignc}${color}${mpd_bar 3,85}
