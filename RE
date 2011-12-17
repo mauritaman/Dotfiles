@@ -1,0 +1,1 @@
+My configs files, Openbox on ArchLinux.
