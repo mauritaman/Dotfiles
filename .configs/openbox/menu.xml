@@ -22,7 +22,7 @@
 				</execute>
 			</action>
 		</item>
-  		 <separator/>
+		<separator/>
 		<menu id="40" label="OpenBox">
 			<item label="Obmenu">
 				<action name="Execute">
