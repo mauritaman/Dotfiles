@@ -1,0 +1,104 @@
+Xft.dpi: 96
+Xft.antialias: true
+Xft.hinting: full
+Xft.hintstyle: hintslight
+Xft.rgba: rgb
+URxvt*iconFile: /home/tam/.icons/term.svg
+URxvt.termName: rxvt-unicode
+URxvt.geometry: 100x25
+irc.geometry: 215x27
+irc*iconFile: /home/tam/.icons/chat.png
+irc*scrollBar: false
+music*iconFile: /home/tam/.icons/music.svg
+URxvt*font: xft:lime:pixelsize=12:antialias=false
+URxvt*boldFont: xft:lime:pixelsize=12:antialias=false
+urxvt.imLocale: ja_JP.UTF-8
+urxvt.loginShell: true
+urxvt.boldMode: false
+urxvt.inheritPixmap: false
+urxvt.xftAntialias: false
+urxvt.jumpScroll: true
+urxvt.tintColor: white
+URxvt*internalBorder: 3
+URxvt*internalBordercolor: #121212
+urxvt.cursorBlink: false
+urxvt.cursorColor: #ff8939
+urxvt.cursorColor2: #121212
+urxvt.colorBD: #857672
+urxvt.colorIT: #bbbbbb
+urxvt.colorUL: #999999
+urxvt.underlineColor: #999999
+urxvt.borderless: true
+
+!URxvt*title: >
+URxvt*saveLines: 5000
+URxvt*scrollColor: #b4cb8c
+URxvt*scrollstyle: plain
+URxvt*scrollBar_right: true
+URxvt*scrollBar: true
+URxvt*visualBell: false
+URxvt*urgentOnBell: true
+URxvt.saveLines: 5000
+URxvt.cursorBlink:      True
+URxvt.perl-ext-common: default,matcher,clipboard
+URxvt.perl-lib:            /usr/lib/urxvt/perl/
+URxvt.urlLauncher:        firefox
+URxvt.matcher.button:        1
+URxvt.tabbed.tabbar-fg: 8
+URxvt.tabbed.tabbar-bg: 0
+URxvt.tabbed.tab-fg: 7
+URxvt.tabbed.tab-bg: 0
+!URxvt.cursorUnderline:  true
+URxvt*jumpScroll: true
+URxvt.scrollTtyOutput:          false
+URxvt.scrollTtyKeypress:        true
+URxvt.scrollWithBuffer:         true
+URxvt*loginShell: true
+URxvt*intensityStyles: true
+URxvt*matcher.button:   1
+URxvt*matcher.pattern.1: \\bwww\\.[\\w-]+\\.[\\w./?&@#-]*[\\w/-]
+URxvt.reverseVideo:          false
+
+!Technobass - Foreground/Background
+URxvt*foreground: #8c8c8c
+URxvt*background: #121212
+
+!Technobass
+! -- black
+URxvt*color0: #000000
+! -- red
+URxvt*color1: #ff8888
+! -- green
+URxvt*color2: #80852d
+! -- yellow
+URxvt*color3: #ffaa55
+! -- blue
+URxvt*color4: #82b8f2
+! -- purple
+URxvt*color5: #ad7fa8
+! -- cyan
+URxvt*color6: #6b9b8b
+! -- white
+URxvt*color7: #babdb6
+! -- bright-black
+URxvt*color8: #555753
+! -- bright-red
+URxvt*color9: #e5505f
+! -- bright-green
+URxvt*color10: #b7e234
+! -- bright-yellow
+URxvt*color11: #e8621d
+! -- bright-blue
+URxvt*color12: #0088cc
+! -- bright-purple
+URxvt*color13: #cb99e1
+! -- bright-cyan
+URxvt*color14: #34E2E2
+! -- bright-white
+URxvt*color15: #e9e9e9
+
+xclock*hourColor: rgb:0/0/0
+xclock*minuteColor: rgb:8/8/8
+xclock*secondColor: rgb:b/b/b
+xclock*majorColor: rgb:0/0/0
+xclock*minorColor: rgb:6/6/6
