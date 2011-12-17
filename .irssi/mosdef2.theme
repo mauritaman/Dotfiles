@@ -1,0 +1,203 @@
+# mosdef.theme by deadcow@efnet (very,very based on screwer by ak5).
+# this theme uses ascii lines, working best on ansi fonts like lime,drift of artwiz aleczapka
+# 25/08/2007 - brazil
+
+default_color = "-1";
+info_eol = "false";
+replaces = { "():@.<" = "%b$*%n"; };
+
+abstracts = {
+
+  ##
+  ## generic
+  ##
+
+  line_start = "";
+  timestamp = "($*)%N";
+  hilight = "%_$*%_";
+  error = "%r$*%N";
+  channel = "$*";
+  nick = "%b$*%n";
+  nickhost = "$*";
+  server = "%_$*%_";
+  comment = "($*)";
+  reason = "(%N$*)";
+  mode = "($*)";
+
+  ##
+  ## channel specific messages
+  ##
+
+  channick_hilight = "%W$*%N";
+  chanhost_hilight = "[$*]";
+  channick = "%N$*";
+  chanhost = "{nickhost $*}";
+  channelhilight = "%_$*%_";
+  ban = "$*";
+
+  ##
+  ## messages
+  ##
+  msgnick = "%b$0%b$1%b>%N ";
+  ownmsgnick = "{msgnick $0 $1}";
+  ownnick = "%N$0%N";
+
+  pubmsgnick = "{msgnick $0 $1}";
+  pubnick = "%N$0%N";
+  pubmsgmenick = "{msgnick $0 $1}%b";
+  #  menick = "%b$0%N";
+  menick = "%4%w$0%N";
+  pubmsghinick = "{msgnick $1 $0$2-}";
+  msgchannel = "%N:%B$*%N";
+
+  privmsg = "[$0(%b$1-)] ";
+  ownprivmsg = "[%b$0(%N$1-)] ";
+  ownprivmsgnick = "{msgnick  $*}";
+  ownprivnick = "%N$*%N";
+  privmsgnick = "{msgnick  %N$*}";
+
+  ##
+  ## Actions (/ME stuff)
+  ##
+
+  action_core = " %R*%n %W$*%n";
+  #  action_core = "%bact:%N $*";
+  action = "{action_core $0} ";
+  ownaction = "{action_core $0} ";
+  ownaction_target = "%bact%N $0:%b$1%N";
+
+  pvtaction = "%bact:%N $*";
+  pvtaction_query = "{action $*}";
+  pubaction = "{action $*}";
+
+
+  ##
+  ## other IRC events
+  ##
+
+  whois = "%b$[8]0 :%N $1-";
+
+  ownnotice = "[%b$0(%N$1-)]: ";
+  notice = "%B─%b─%N $*%w@%b$chatnet%W:%N ";
+  pubnotice_channel = "%N(%b$*)";
+  pvtnotice_host = "(%b$*)";
+  servernotice = "%B─%b─%N $*:%N ";
+
+  ownctcp = "[%b$0($1-)]:";
+  ctcp = "%N$*";
+
+  wallop = "%b$*%N: ";
+  wallop_nick = "%N$*";
+  wallop_action = "%B─%b─%N $*%N ";
+
+  netsplit = "%B─%b─%N $* %N";
+  netjoin = "%B─%b─%N $* %N";
+
+  names_prefix = "     %B│%n ";
+  names_nick = "%b$0%N$1-%N  ";
+  names_nick_op = "{names_nick $*}";
+  names_nick_halfop = "{names_nick $*}";
+  names_nick_voice = "{names_nick $*}";
+  names_users = "%B┌────────────%b── ─%n\012%B│%n $* \012%B└────┬──────────────────────────────%b── ─%n";
+  names_channel = "$*";
+
+  dcc = "$*%N";
+  dccfile = "%_$*%_";
+  dccownmsg = "[$0($1-)] ";
+  dccownnick = "$*";
+  dccownquerynick = "%N$*%N";
+  dccownaction = "%B─%b─%N $* ";
+  dccownaction_target = "%%B─%b─%N $0%b:%b$1%N ";
+  dccmsg = "[$1-($0)] ";
+  dccquerynick = "$*";
+  dccaction = "%B─%b─%N $* ";
+
+  ##
+  ## statusbar
+  ##
+
+  sb_background = "%N%N";
+  sb_default_bg = "%N";
+  sb_prompt_bg = "%N";
+  sb_info_bg = "%N";
+  sb_topic_bg = "%N";
+  sbstart = "%B┌──%b──%N ";
+  sbend = "";
+
+  #  topicsbstart = "%btp:%N";
+  #  topicsbend = "%B.%b.%N";
+
+  prompt = "%B└%b─ (%N$*%b)%B:%n ";
+  promptend = "┌";
+
+  sb = "%b(%N$*%b)%N ";
+  sbtime = "%b$*%N ";
+  sbmode = "%b/%N+$*%n";
+  sbaway = "%b/%Naway%N";
+  sbservertag = "%b:%N$0%b(%N^X%b)";
+  sb_act_sep = "%b$*";
+  sb_act_text = "%N$*";
+  sb_act_msg = "%b$*";
+  sb_act_hilight = "%R$*";
+  sb_act_hilight_color = "$0$1-%N";
+  sb_usercount = "{sb $0%b/$1-}";
+  sb_uc_ircops = "%b*%N$*";
+  sb_uc_ops = "%b@%N$*";
+  sb_uc_halfops = "%b%%%N$*";
+  sb_uc_voices = "%b+%N$*";
+  sb_uc_normal = "%N$*";
+  sb_uc_space = "%b,";
+  nact_display = "$1>%N$0>%N$2";
+  nact_command = "$1: [DN:$0 UP:$2]";
+};
+
+formats = {
+  "fe-common/core" = {
+    join = "%B─%b─%N $0%B!%n{chanhost $1} %bhas joined%n $2";
+    part = "%B─%b─%N $0%B!%n{chanhost $1} %bhas left%n $2 {reason $3}";
+    quit = "%B─%b─%N $0%B!%n{chanhost $1} %bhas quit%n {reason $2}";
+    kick = "%B─%b─%N $0 %bwas %Bkicked%b from%N {channel $1} %bby%N $2 {reason $3}";
+    own_msg = "{ownmsgnick $2 {ownnick $0}}$1";
+    own_msg_channel = "{ownmsgnick $3 {ownnick $0}{msgchannel $1}}$2";
+    pubmsg_me = "{pubmsgmenick $2 {menick $0}}$1";
+    pubmsg_me_channel = "{pubmsgmenick $3 {menick $0}{msgchannel $1}}$2";
+    pubmsg_hilight = "{pubmsghinick $0 $3 $1}$2";
+    pubmsg_hilight_channel = "{pubmsghinick $0 $4 $1{msgchannel $2}}$3";
+    pubmsg = "{pubmsgnick $2 {pubnick \00311$0}}$1";
+    pubmsg_channel = "{pubmsgnick $3 {pubnick $0}{msgchannel $1}}$2";
+    set_item = "$0 %b=%N $1";
+    line_start_irssi = "{line_start}     %B└%b─ ";
+    nick_changed = "%B─%b─%B {channick $0}%N is now known as {nick $1}";
+    your_nick_changed = "%B─%b─%N You're now known as {nick $1}";
+    daychange = "%B─%b─%N Day changed to %%d %%b %%Y";
+  };
+  "fe-common/irc" = {
+    chanmode_change = "%B─%b─%N mode/%B{channel $0}:%N {mode $1} %bby%N $2";
+    whois = "       %B┌──────┐%n\012%B┌──────┼──────└─────────%b─── ─ %n\012%B│ %bhost%B ┼%b─>%n $0 \012($1@$2)\012%B│ %bname%B ┼%b─>%n $3";
+    whois_idle = "%B│ %bidle%B ┼%b─>%n %|$1d $2h $3m $4s";
+    whois_idle_signon = "%B│ %bidle%B ┼%b─>%n %|$1d $2h $3m $4s {comment signon: $5}";
+    whois_server = "%B│ %bserv%B ┼%b─>%n %|$1 {comment $2}";
+    whois_oper = "%B│ %boper%B ┼%b─>%n {hilight $1}";
+    whois_registered = "%B│ %brgis%B ┼%b─>%n yes";
+    whois_help = "%B│ %bhelp%B ┼%b─>%n is available for help";
+    whois_modes = "%B│ %bmods%B ┼%b─>%n $1";
+    whois_realhost = "%B│ %brhos%B ┼%b─>%n $1-";
+    whois_usermode = "%B│ %bumod%B ┼%b─>%n $1";
+    whois_channels = "%B│ %bchan%B ┼%b─>%n %|$1";
+    whois_away = "%B│ %baway%B ┼%b─>%n %|$1";
+    whois_special = "%B│ %binfo%B ┼%b─>%n {comment %|$1}";
+    whois_extra = "%B│ %bextr%B ┼%b─>%n %|$1";
+    end_of_whois = "%B└──────┼──────┬────────────────────────%b── ─ ─%n\012       %B└──────┘%n";
+    whois_not_found = "%B─%b─%N There is no such nick as $0";
+    default_event_server = "%B│ %bircd%B ┼%b─>%n $1 [$0]";
+    server_chanmode_change = "{netsplit IRCDMode}%b/%n$0 %n{mode $1} %bby%N {nick $2}";
+    own_action = "{ownaction $0}$1";
+    action_public = "{pubaction $0}$1";
+    action_public_channel = "{pubaction $0{msgchannel $1}}$2";
+    channel_created = "     %B┌%b─%n %bChannel%n $0 %bCreated%n $1 %b─%B┐%n";
+    topic = "     %B┌%b─%n Topic for %b$0:%N $1";
+    no_topic = "     %B┌%b─%n No topic set for %b$0%n";
+    topic_info = "     %B└%b─%n Topic set by {nick $0}!%n{nickhost $2} {comment $1}";
+    channel_synced = "%bJoin to%n {channel $0} %bwas Synced in%n {hilight $1} %bsecs%n %b───%B──────────┘%n";
+  };
+};
